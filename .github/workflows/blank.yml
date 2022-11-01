@@ -1,4 +1,4 @@
-name: "example-cron-action"
+name: "Proxy-Bot"
 on:
   schedule:
     - cron:  '*/05 * * * *'    # At every 15th minute
