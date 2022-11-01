@@ -1,0 +1,15 @@
+name: "example-cron-action"
+on:
+  schedule:
+    - cron:  '*/05 * * * *'    # At every 15th minute
+
+jobs:
+  singleJobName:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+        with:
+          ref: ${{ env.DELAYED_JOB_CHECKOUT_REF }} # SHA that triggered your original job 
+
+      - name: Do some work
+        run: echo $GITHUB_SHA
